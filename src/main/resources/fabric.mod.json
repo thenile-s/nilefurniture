@@ -1,0 +1,37 @@
+{
+    "schemaVersion": 1,
+    "id": "nilefurniture",
+    "version": "${version}",
+
+    "name": "Nile Furniture",
+    "description": "To George...",
+    "authors": [
+        "The Nile"
+    ],
+    "contact": {
+        "homepage": "https://fabricmc.net/",
+        "sources": "https://github.com/FabricMC/fabric-example-mod"
+    },
+
+    "license": "CC0-1.0",
+    "icon": "assets/nilefurniture/icon.png",
+
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "net.nile.furniture.NileFurniture"
+        ]
+    },
+    "mixins": [
+        "nilefurniture.mixins.json"
+    ],
+
+    "depends": {
+        "fabricloader": ">=0.7.4",
+        "fabric": "*",
+        "minecraft": "1.16.x"
+    },
+    "suggests": {
+        "another-mod": "*"
+    }
+}
