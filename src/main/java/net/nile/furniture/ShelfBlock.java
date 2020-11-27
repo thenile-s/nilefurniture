@@ -32,7 +32,7 @@ public class ShelfBlock extends Block {
     VoxelShapes.cuboid(8/16f, 8/16f, 0/16f, 16f/16f, 9/16f, 16/16f));
 
     private static final VoxelShape WEST_SHAPE = 
-    VoxelShapes.union(VoxelShapes.cuboid(0/16f, 0/16f, 0/16f, 8/16f, 1/16f, 16/16f),
+    VoxelShapes.union(VoxelShapes.cuboid(0/16f, 0/16f, 0/16f, 16f/16f, 1/16f, 8/16f),
     VoxelShapes.cuboid(0/16f, 8/16f, 0/16f, 16f/16f, 9/16f, 8/16f));
 
     public ShelfBlock(Settings settings) {
