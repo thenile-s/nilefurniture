@@ -20,6 +20,9 @@
     "entrypoints": {
         "main": [
             "net.nile.furniture.NileFurniture"
+        ],
+        "client": [
+            "net.nile.furniture.client.NileFurnitureClient"
         ]
     },
     "mixins": [
