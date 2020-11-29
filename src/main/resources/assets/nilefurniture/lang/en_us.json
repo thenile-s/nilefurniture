@@ -1,4 +1,14 @@
 {
     "item.nilefurniture.oak_shelf": "Oak Shelf",
-    "block.nilefurniture.oak_shelf": "Oak Shelf"
+    "block.nilefurniture.oak_shelf": "Oak Shelf",
+    "item.nilefurniture.dark_oak_shelf": "Dark Oak Shelf",
+    "block.nilefurniture.dark_oak_shelf": "Dark Oak Shelf",
+    "item.nilefurniture.birch_shelf": "Birch Shelf",
+    "block.nilefurniture.birch_shelf": "Birch Shelf",
+    "item.nilefurniture.acacia_shelf": "Acacia Shelf",
+    "block.nilefurniture.acacia_shelf": "Acacia Shelf",
+    "item.nilefurniture.spruce_shelf": "Spruce Shelf",
+    "block.nilefurniture.spruce_shelf": "Spruce Shelf",
+    "item.nilefurniture.jungle_shelf": "Jungle Shelf",
+    "block.nilefurniture.jungle_shelf": "Jungle Shelf"
 }

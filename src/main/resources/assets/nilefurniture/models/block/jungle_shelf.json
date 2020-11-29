@@ -2,7 +2,7 @@
     "parent": "nilefurniture:block/shelf",
     "credit": "Made with Blockbench",
     "textures": {
-        "0": "nilefurniture:block/oak_shelf",
-        "particle": "minecraft:block/oak_planks"
+        "0": "nilefurniture:block/jungle_shelf",
+        "particle": "minecraft:block/jungle_planks"
     }
 }

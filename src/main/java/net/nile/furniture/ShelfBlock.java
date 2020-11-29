@@ -187,7 +187,9 @@ public class ShelfBlock extends BlockWithEntity {
                     sb.sync();
                 } else if (playerStack.isItemEqual(shelfStack) && ItemStack.areTagsEqual(playerStack, shelfStack)) {
                     int countNeeded = shelfStack.getMaxCount() - shelfStack.getCount();
+                    
                     int countTaken = Math.min(countNeeded, playerStack.getCount());
+                        
                     if (countTaken > 0) {
                         playerStack.decrement(countTaken);
                         shelfStack.increment(countTaken);

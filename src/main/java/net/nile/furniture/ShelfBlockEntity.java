@@ -31,7 +31,7 @@ public class ShelfBlockEntity extends BlockEntity implements ImplementedInventor
     public void fromTag(BlockState state, CompoundTag tag) {
         super.fromTag(state, tag);
         Inventories.fromTag(tag, this.inventory);
-        Direction.byId(tag.getInt("dir"));
+        direction = Direction.byId(tag.getInt("dir"));
     }
 
     @Override

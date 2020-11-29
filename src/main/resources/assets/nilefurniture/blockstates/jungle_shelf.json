@@ -1,0 +1,20 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "nilefurniture:block/jungle_shelf",
+            "y": 180
+        },
+        "facing=south": {
+            "model": "nilefurniture:block/jungle_shelf",
+            "y": 0
+        },
+        "facing=west": {
+            "model": "nilefurniture:block/jungle_shelf",
+            "y": 90
+        },
+        "facing=east": {
+            "model": "nilefurniture:block/jungle_shelf",
+            "y": 270
+        }
+    }
+}
