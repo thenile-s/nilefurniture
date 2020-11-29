@@ -4,14 +4,17 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Material;
+import net.minecraft.block.MaterialColor;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.tag.Tag;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,17 +27,17 @@ public class NileFurniture implements ModInitializer {
 
     public static final Logger logger = LogManager.getLogger();
 
-    public static final Block OAK_SHELF = new ShelfBlock(FabricBlockSettings.of(Material.WOOD).breakByTool(FabricToolTags.AXES));
+    public static final Block OAK_SHELF = new ShelfBlock(FabricBlockSettings.of(Material.WOOD, MaterialColor.WOOD).breakByTool(FabricToolTags.AXES).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
-    public static final Block BIRCH_SHELF = new ShelfBlock(FabricBlockSettings.of(Material.WOOD).breakByTool(FabricToolTags.AXES));
+    public static final Block BIRCH_SHELF = new ShelfBlock(FabricBlockSettings.of(Material.WOOD, MaterialColor.WOOD).breakByTool(FabricToolTags.AXES).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
-    public static final Block ACACIA_SHELF = new ShelfBlock(FabricBlockSettings.of(Material.WOOD).breakByTool(FabricToolTags.AXES));
+    public static final Block ACACIA_SHELF = new ShelfBlock(FabricBlockSettings.of(Material.WOOD, MaterialColor.WOOD).breakByTool(FabricToolTags.AXES).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
-    public static final Block DARK_OAK_SHELF = new ShelfBlock(FabricBlockSettings.of(Material.WOOD).breakByTool(FabricToolTags.AXES));
+    public static final Block DARK_OAK_SHELF = new ShelfBlock(FabricBlockSettings.of(Material.WOOD, MaterialColor.WOOD).breakByTool(FabricToolTags.AXES).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
-    public static final Block JUNGLE_SHELF = new ShelfBlock(FabricBlockSettings.of(Material.WOOD).breakByTool(FabricToolTags.AXES));
+    public static final Block JUNGLE_SHELF = new ShelfBlock(FabricBlockSettings.of(Material.WOOD, MaterialColor.WOOD).breakByTool(FabricToolTags.AXES).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
-    public static final Block SPRUCE_SHELF = new ShelfBlock(FabricBlockSettings.of(Material.WOOD).breakByTool(FabricToolTags.AXES));
+    public static final Block SPRUCE_SHELF = new ShelfBlock(FabricBlockSettings.of(Material.WOOD, MaterialColor.WOOD).breakByTool(FabricToolTags.AXES).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
 
 
     public static BlockEntityType<ShelfBlockEntity> SHELF_BLOCK_ENTITY;
@@ -56,6 +59,7 @@ public class NileFurniture implements ModInitializer {
         //FurnaceBlockEntityRenderer
         //ItemFrameEntityRenderer
         //ModelPredicateProviderRegistry
+        //Blocks
 
         SHELF_BLOCK_ENTITY = 
         Registry.register(

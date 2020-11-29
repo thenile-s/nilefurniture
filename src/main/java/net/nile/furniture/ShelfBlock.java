@@ -125,11 +125,6 @@ public class ShelfBlock extends BlockWithEntity {
             double yHit = (precisePos.y - pos.getY());
             double xHit = (precisePos.x - pos.getX());
             double zHit = (precisePos.z - pos.getZ());
-
-            NileFurniture.logger.info("Shelf hit at Y: " + yHit);
-            NileFurniture.logger.info("Shelf hit at X: " + xHit);
-            NileFurniture.logger.info("Shelf hit at Z: " + zHit);
-
             int selectedIndex = 0;
 
             if (yHit > .5) {
@@ -199,8 +194,6 @@ public class ShelfBlock extends BlockWithEntity {
                 NileFurniture.logger.warn("Shelf block without shelf block entity!");
 
             }
-
-            NileFurniture.logger.info("Selected index: " + selectedIndex);
 
         }
 

@@ -43,9 +43,6 @@ public class ShelfBlockEntity extends BlockEntity implements ImplementedInventor
 
     @Override
     public void fromClientTag(CompoundTag tag) {
-        NileFurniture.logger.info("from clien tag ASDASDASDASD");
-        NileFurniture.logger.warn(tag.toString());
-        
         setStack(0, new ItemStack(Item.byRawId(tag.getInt("0"))));
         getStack(0).setTag(tag.getCompound("0t"));
         setStack(1, new ItemStack(Item.byRawId(tag.getInt("1"))));
@@ -69,10 +66,7 @@ public class ShelfBlockEntity extends BlockEntity implements ImplementedInventor
         tag.putInt("3", Item.getRawId(getStack(3).getItem()));
         tag.put("3t", getStack(3).getTag());
         tag.putInt("4", direction.getId());
-
-        NileFurniture.logger.info("to clien tag");
-        NileFurniture.logger.warn(tag.toString());
-
+        
         return tag;
     }
 }
