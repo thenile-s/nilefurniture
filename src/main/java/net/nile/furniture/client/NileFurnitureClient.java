@@ -4,6 +4,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.BlockEntityRendererRegistry;
+import net.minecraft.block.entity.BlockEntityType;
 //import net.fabricmc.fabric.api.network.ClientSidePacketRegistry;
 import net.nile.furniture.NileFurniture;
 
@@ -13,6 +14,8 @@ public class NileFurnitureClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockEntityRendererRegistry.INSTANCE.register(NileFurniture.SHELF_BLOCK_ENTITY, ShelfBlockEntityRenderer::new);
+        BlockEntityRendererRegistry.INSTANCE.register(BlockEntityType.FURNACE, FurnaceBlockEntityRenderer::new);
+
         // ClientSidePacketRegistry.INSTANCE.register(NileFurniture.SHELF_DISPLAY_PACKET, 
         // (pc, id)->{
 

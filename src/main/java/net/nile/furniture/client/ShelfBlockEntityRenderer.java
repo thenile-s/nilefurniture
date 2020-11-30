@@ -9,7 +9,8 @@ import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import net.minecraft.client.render.model.json.ModelTransformation.Mode;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.client.util.math.Vector3f;
-import net.minecraft.util.math.Quaternion;
+import net.minecraft.util.math.Direction;
+import net.nile.furniture.ShelfBlock;
 import net.nile.furniture.ShelfBlockEntity;
 
 @Environment(EnvType.CLIENT)
@@ -32,7 +33,9 @@ public class ShelfBlockEntityRenderer extends BlockEntityRenderer<ShelfBlockEnti
 
         Mode renderMode = Mode.FIXED;
 
-        switch (entity.direction) {
+        Direction direction = entity.getCachedState().get(ShelfBlock.FACING);
+
+        switch (direction) {
             case SOUTH:
                 matrices.push();
                 matrices.translate(12 / 16f, 0 + baseY, 12 / 16f);
@@ -71,7 +74,7 @@ public class ShelfBlockEntityRenderer extends BlockEntityRenderer<ShelfBlockEnti
             case NORTH:
             matrices.push();
 
-            matrices.multiply(new Quaternion(0, 180, 0, true));
+            matrices.multiply(NileRotations.y180);
             matrices.translate(-16/16f, 0/16f, -8/16f);
 
             matrices.push();
@@ -113,7 +116,7 @@ public class ShelfBlockEntityRenderer extends BlockEntityRenderer<ShelfBlockEnti
             case EAST:
             matrices.push();
 
-            matrices.multiply(new Quaternion(0, 90, 0, true));
+            matrices.multiply(NileRotations.y90);
             matrices.translate(-16/16f, 0/16f, 8/16f);
 
             matrices.push();
@@ -155,7 +158,7 @@ public class ShelfBlockEntityRenderer extends BlockEntityRenderer<ShelfBlockEnti
             case WEST:
             matrices.push();
 
-            matrices.multiply(new Quaternion(0, 270, 0, true));
+            matrices.multiply(NileRotations.y270);
             matrices.translate(-0/16f, 0/16f, -8/16f);
 
             matrices.push();

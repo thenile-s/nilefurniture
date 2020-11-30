@@ -10,18 +10,14 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.tag.Tag;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class NileFurniture implements ModInitializer {
-
-    //TODO loot tables and tools
 
     public static final String modid = "nilefurniture";
 
@@ -60,14 +56,27 @@ public class NileFurniture implements ModInitializer {
         //ItemFrameEntityRenderer
         //ModelPredicateProviderRegistry
         //Blocks
+        //FurnaceBlock
+        //FurnaceBlockEntity
+        //FurnaceBlockEntityRenderer
+        //FurnaceScreenHandler
 
+        //Mixin to begin monitored reload
+        //use resource manager to get resource
+        //close it and try with catch?
+        //ReloadableResourceManagerImpl
+        //ParticleManager
+
+        //TODO smoker and blast furnace just like furnace
+        //TODO resource pack support
+        
         SHELF_BLOCK_ENTITY = 
         Registry.register(
             Registry.BLOCK_ENTITY_TYPE,
             new Identifier(modid, "shelf"),
             BlockEntityType.Builder.create(ShelfBlockEntity::new,
             new Block[]{OAK_SHELF, DARK_OAK_SHELF, ACACIA_SHELF, SPRUCE_SHELF, JUNGLE_SHELF, BIRCH_SHELF}).build(null));
-
+        
         Registry.register(Registry.BLOCK, new Identifier(modid, "oak_shelf"), OAK_SHELF);
         Registry.register(Registry.ITEM, new Identifier(modid, "oak_shelf"), new BlockItem(OAK_SHELF, new Item.Settings().group(ItemGroup.DECORATIONS).maxCount(64)));
         Registry.register(Registry.BLOCK, new Identifier(modid, "dark_oak_shelf"), DARK_OAK_SHELF);

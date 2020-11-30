@@ -163,8 +163,6 @@ public class ShelfBlock extends BlockWithEntity {
 
                 ShelfBlockEntity sb = ((ShelfBlockEntity) be);
 
-                sb.direction = state.get(FACING);
-
                 ItemStack playerStack = player.getStackInHand(hand);
 
                 ItemStack shelfStack = sb.getStack(selectedIndex);
@@ -174,7 +172,6 @@ public class ShelfBlock extends BlockWithEntity {
                         player.setStackInHand(hand, shelfStack);
                         sb.setStack(selectedIndex, ItemStack.EMPTY);
                         sb.sync();
-                        NileFurniture.logger.info("AAAH");
                     }
                 } else if (shelfStack.isEmpty()) {
                     sb.setStack(selectedIndex, playerStack);

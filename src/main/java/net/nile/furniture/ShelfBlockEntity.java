@@ -8,13 +8,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.collection.DefaultedList;
-import net.minecraft.util.math.Direction;
 
 public class ShelfBlockEntity extends BlockEntity implements ImplementedInventory, BlockEntityClientSerializable {
 
     public final int invsize = 4;
-    
-    public Direction direction = Direction.SOUTH;
 
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(invsize, ItemStack.EMPTY);
 
@@ -31,13 +28,11 @@ public class ShelfBlockEntity extends BlockEntity implements ImplementedInventor
     public void fromTag(BlockState state, CompoundTag tag) {
         super.fromTag(state, tag);
         Inventories.fromTag(tag, this.inventory);
-        direction = Direction.byId(tag.getInt("dir"));
     }
 
     @Override
     public CompoundTag toTag(CompoundTag tag) {
         super.toTag(tag);
-        tag.putInt("dir", direction.getId());
         return Inventories.toTag(tag, this.inventory);
     }
 
@@ -51,7 +46,6 @@ public class ShelfBlockEntity extends BlockEntity implements ImplementedInventor
         getStack(2).setTag(tag.getCompound("2t"));
         setStack(3, new ItemStack(Item.byRawId(tag.getInt("3"))));
         getStack(3).setTag(tag.getCompound("3t"));
-        direction = Direction.byId(tag.getInt("4"));
     }
 
     @Override
@@ -65,7 +59,6 @@ public class ShelfBlockEntity extends BlockEntity implements ImplementedInventor
         tag.put("2t", getStack(2).getTag());
         tag.putInt("3", Item.getRawId(getStack(3).getItem()));
         tag.put("3t", getStack(3).getTag());
-        tag.putInt("4", direction.getId());
         
         return tag;
     }
